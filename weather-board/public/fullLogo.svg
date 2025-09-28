@@ -1,0 +1,26 @@
+<svg width="720" height="160" viewBox="0 0 720 160" role="img" xmlns="http://www.w3.org/2000/svg">
+  <title>WeatherBoard — Horizontal Lockup</title>
+  <!-- Icon (scaled) -->
+  <g transform="translate(8,16) scale(0.48)">
+    <circle cx="116" cy="92" r="32" fill="#FACC15" />
+    <path d="M64 160c0-17.673 14.327-32 32-32c2.665-18.225 18.363-32 37.333-32c17.673 0 32 12.5 35.481 29.165C185.9 125.751 200 138.777 200 156c0 17.673-14.327 32-32 32H96c-17.673 0-32-14.327-32-32Z"
+          fill="#FFFFFF" stroke="#3B82F6" stroke-width="8" stroke-linejoin="round"/>
+    <rect x="96" y="152" width="22" height="26" rx="6" fill="#64748B"/>
+    <rect x="124" y="142" width="22" height="36" rx="6" fill="#64748B"/>
+    <rect x="152" y="132" width="22" height="46" rx="6" fill="#64748B"/>
+  </g>
+
+  <!-- Wordmark -->
+  <g transform="translate(120,104)">
+    <text x="0" y="0"
+      font-family="Poppins, Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif"
+      font-size="48" font-weight="700" fill="#1E293B" letter-spacing="0.2">
+      Weather
+    </text>
+    <text x="232" y="0"
+      font-family="Poppins, Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif"
+      font-size="48" font-weight="700" fill="#3B82F6" letter-spacing="0.2">
+      Board
+    </text>
+  </g>
+</svg>

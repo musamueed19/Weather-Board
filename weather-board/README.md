@@ -1,73 +1,137 @@
-# React + TypeScript + Vite
+<div align="center">
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<img src="./public/fullLogo.svg" alt="WeatherBoard" width="520" />
 
-Currently, two official plugins are available:
+<h1>WeatherBoard</h1>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<p><strong>All your forecasts, one dashboard.</strong></p>
 
-## React Compiler
+[Live Demo](#) · [Report Bug](https://github.com/musamueed19/Weather-Board/issues) · [Request Feature](https://github.com/musamueed19/Weather-Board/issues)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+</div>
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Overview
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+WeatherBoard is a clean, fast weather dashboard built with React + Vite. It shows your current conditions and a 5‑day outlook with a focus on readability, speed, and a modern dashboard feel.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Highlights
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Lightning-fast client with query caching (planned: TanStack Query)
+- Geolocation support and city search with debouncing
+- Polished UI and accessible light/dark themes
+
+> Branding: Sky Blue (#3B82F6), Sun Yellow (#FACC15), Cool Gray (#64748B), Storm Dark (#1E293B), White (#FFFFFF).
+
+## Features
+
+- Search weather by city name
+- Detect current location weather (Geolocation API)
+- Current dashboard: Temperature, Condition, Humidity, Wind, Sunrise/Sunset
+- 5‑day forecast (daily min/max + icon)
+- Light/Dark mode toggle (persisted)
+
+Planned Enhancements
+
+- Autocomplete suggestions via OpenWeather Geocoding API
+- Temperature trend chart (Recharts)
+- Units toggle °C/°F
+
+## Screenshots
+
+> Note: Replace placeholders with real screenshots after implementing UI.
+
+![WeatherBoard dashboard light](./docs/images/dashboard-light.png)
+
+![WeatherBoard dashboard dark](./docs/images/dashboard-dark.png)
+
+## Tech Stack
+
+- React 19 + TypeScript
+- Vite 7
+- TanStack Query (planned)
+- Tailwind CSS (planned)
+- OpenWeather API
+
+## Getting Started
+
+Prerequisites
+
+- Node.js 18+
+- OpenWeather API key (free) https://openweathermap.org/api
+
+1. Clone and install
+
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Configure environment
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Create a `.env` file in the project root (use `.env.example` as a guide):
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+VITE_OPENWEATHER_API_KEY=your_api_key_here
+```
+
+3. Run the app
+
+```bash
+npm run dev
+```
+
+The dev server URL will be shown in the terminal (typically http://localhost:5173).
+
+## Project Structure
+
+```
+weather-board/
+├─ public/
+│  ├─ logo-light.svg
+│  ├─ logo-dark.svg
+│  └─ fullLogo.svg
+├─ src/
+│  ├─ assets/
+│  ├─ App.tsx
+│  ├─ main.tsx
+│  └─ index.css
+├─ docs/
+│  └─ PRD.md
+├─ index.html
+├─ package.json
+└─ README.md
+```
+
+## Configuration
+
+- Title/Meta: Update `index.html` for title/description.
+- API Key: Uses `VITE_OPENWEATHER_API_KEY` at build/runtime.
+- Query Caching: When TanStack Query is added, set sensible defaults: `staleTime` ~5m, `cacheTime` ~15m, `retry` 2.
+
+## Deployment (Vercel)
+
+1. Push to GitHub.
+2. Import repo in Vercel.
+3. Add environment variable in Project Settings:
+   - `VITE_OPENWEATHER_API_KEY = <your_key>`
+4. Deploy. Preview URLs on PRs are automatic.
+
+## Roadmap
+
+- [ ] City autocomplete (geocoding)
+- [ ] Forecast chart (Recharts)
+- [ ] Units toggle (°C/°F)
+- [ ] Favorites/pinned cities
+- [ ] PWA: offline shell + install prompt
+
+## Contributing
+
+Contributions are welcome. Open an issue to discuss ideas or bugs. If you submit a PR, please:
+
+- Keep commits focused and small.
+- Update docs/screenshots if behavior changes.
+
+## License
+
+MIT © 2025 musamueed19

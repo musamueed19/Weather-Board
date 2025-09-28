@@ -1,0 +1,12 @@
+<svg width="256" height="256" viewBox="0 0 256 256" role="img" xmlns="http://www.w3.org/2000/svg">
+  <title>WeatherBoard Logo — Light</title>
+  <!-- Sun -->
+  <circle cx="116" cy="92" r="32" fill="#FACC15" />
+  <!-- Cloud -->
+  <path d="M64 160c0-17.673 14.327-32 32-32c2.665-18.225 18.363-32 37.333-32c17.673 0 32 12.5 35.481 29.165C185.9 125.751 200 138.777 200 156c0 17.673-14.327 32-32 32H96c-17.673 0-32-14.327-32-32Z"
+        fill="#FFFFFF" stroke="#3B82F6" stroke-width="8" stroke-linejoin="round"/>
+  <!-- Dashboard bars -->
+  <rect x="96" y="152" width="22" height="26" rx="6" fill="#64748B"/>
+  <rect x="124" y="142" width="22" height="36" rx="6" fill="#64748B"/>
+  <rect x="152" y="132" width="22" height="46" rx="6" fill="#64748B"/>
+</svg>
