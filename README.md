@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./public/fullLogo.svg" alt="WeatherBoard" width="520" />
+<img src="./weather-board/public/fullLogo.svg" alt="WeatherBoard" width="520" />
 
 <h1>WeatherBoard</h1>
 
@@ -22,7 +22,12 @@ Highlights
 - Geolocation support and city search with debouncing
 - Polished UI and accessible light/dark themes
 
-> Branding: Sky Blue (#3B82F6), Sun Yellow (#FACC15), Cool Gray (#64748B), Storm Dark (#1E293B), White (#FFFFFF).
+> Branding:
+Sky Blue (#3B82F6),
+Sun Yellow (#FACC15),
+Cool Gray (#64748B),
+Storm Dark (#1E293B),
+White (#FFFFFF),
 
 ## Features
 
