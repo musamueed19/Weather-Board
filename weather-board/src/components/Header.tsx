@@ -25,7 +25,7 @@ const Header = () => {
           <Button
             variant={"outline"}
             onClick={() => setTheme(isDark ? "light" : "dark")}
-            className={`flex items-center justify-center  cursor-pointer p-2 rounded-md bg-background/60 hover:bg-background/70`}
+            className={`flex items-center justify-center p-2 rounded-md bg-background/60 hover:bg-background/70`}
           >
             <div
               className={`transition-transform duration-500 ${

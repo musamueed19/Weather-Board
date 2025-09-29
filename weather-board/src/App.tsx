@@ -7,6 +7,7 @@ import NotFoundPage from "./pages/not-found-page";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import ErrorPage from "./pages/error-page";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,7 @@ const App = () => {
               <Route path="/city/:cityName" element={<CityPage />} />
             </Route>
             {/* 404 route outside Layout so it renders without header/footer */}
+            <Route path="/error" element={<ErrorPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
 
