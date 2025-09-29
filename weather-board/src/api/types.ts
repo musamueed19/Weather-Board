@@ -19,6 +19,7 @@ export interface MainWeatherData {
   humidity: number;
   sea_level: number;
   grnd_level: number;
+  temp_kf?: number;
 }
 
 export interface Wind {
@@ -49,8 +50,8 @@ export interface Sys {
 
 export interface CurrentWeatherResponse {
   coord: Coordinates;
-  weather: WeatherCondition[];
   base: string;
+  weather: WeatherCondition[];
   main: MainWeatherData;
   visibility: number;
   wind: Wind;
@@ -64,3 +65,64 @@ export interface CurrentWeatherResponse {
   name: string;
   cod: number;
 }
+
+export interface ForecastListItem {
+  dt: number;
+  main: MainWeatherData;
+  weather: WeatherCondition[];
+  clouds: Clouds;
+  wind: Wind;
+  visibility: number;
+  pop: number; // Probability of precipitation
+  rain?: Rain;
+  snow?: Snow;
+  sys: {
+    pod: string; // Part of day (d/n)
+  };
+  dt_txt: string; // Date/time in text format
+}
+
+export interface City {
+  id: number;
+  name: string;
+  coord: Coordinates;
+  country: string;
+  population: number;
+  timezone: number;
+  sunrise: number;
+  sunset: number;
+}
+
+export interface ForecastResponse {
+  cod: string;
+  message: number;
+  cnt: number;
+  list: ForecastListItem[];
+  city: {
+    id: number;
+    name: string;
+    coord: Coordinates;
+    country: string;
+    population: number;
+    timezone: number;
+    sunrise: number;
+    sunset: number;
+  };
+}
+
+export interface LocalNames {
+  [key: string]: string;
+}
+
+export interface ReverseGeocodingItem {
+  name: string;
+  local_names: LocalNames;
+  // or
+  // local_names: Record <string, string>;
+  lat: number;
+  lon: number;
+  country: string;
+  state?: string;
+}
+// export interface ReverseGeocodingResponse extends Array<ReverseGeocodingItem> {}
+export type ReverseGeocodingResponse = ReverseGeocodingItem[];
